@@ -35,7 +35,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center flex-shrink-0 ml-0">
             <img 
-              src="/ines.png" 
+              src="/inesaaa.png" 
               alt="Logo Inesa" 
               className="h-8 w-auto sm:h-9 lg:h-10"
               loading="lazy"
@@ -127,7 +127,7 @@ export default function Header() {
             {/* Menu Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-100">
               <img 
-                src="/inesabaru.jpg" 
+                src="/inesaaa.png" 
                 alt="Logo Inesa" 
                 className="h-8 w-auto"
                 loading="lazy"

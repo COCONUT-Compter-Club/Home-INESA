@@ -34,9 +34,9 @@ export default function Bontomanai() {
   ];
 
   const galleryImages = [
-    { src: '/1a.jpg', alt: 'Kegiatan Desa Bontomanai 1', description: 'Dokumentasi Kerjasama antara INESA dan Kepala Desa Bontomanai' },
-    { src: '/2a.JPG', alt: 'Kegiatan Desa Bontomanai 2', description: 'Sosialisasi penggunaan Web Aplikasi INESA' },
-    { src: '/3a.JPG', alt: 'Kegiatan Desa Bontomanai 3', description: 'Pengenalan INESA kepada warga' },
+    { src: '/1a.jpg', alt: 'Kegiatan Desa Bontomanai 1', description: 'Dokumentasi Kerjasama antara INESA dan Kepala Desa Bontomanai', width: 800, height: 600 },
+    { src: '/2a.JPG', alt: 'Kegiatan Desa Bontomanai 2', description: 'Sosialisasi penggunaan Web Aplikasi INESA', width: 800, height: 600 },
+    { src: '/3a.JPG', alt: 'Kegiatan Desa Bontomanai 3', description: 'Pengenalan INESA kepada warga', width: 800, height: 600 },
   ];
 
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function Bontomanai() {
     const url = window.location.href;
     const title = 'Inesa & Pemerintah Desa Bontomanai';
     const shareUrls = {
-      linkedin: 'https://www.linkedin.com/company/coconutcomputer',
+      linkedin: 'https://www.linkedin.com/company/coconut-computer-club',
       instagram: 'https://www.instagram.com/coconutdotorg/',
       facebook: 'https://www.facebook.com/coconutcomputer',
       youtube: 'https://www.youtube.com/@coconutcomputerclub3982',
@@ -151,6 +151,8 @@ export default function Bontomanai() {
                 alt="Desa Bontomanai"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
+                width={1200}
+                height={600}
               />
               <div className="absolute inset-0 bg-black bg-opacity-40"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -239,7 +241,7 @@ export default function Bontomanai() {
                     <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-green-500 to-blue-500 rounded-full mr-3 sm:mr-4"></div>
                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">Fitur dan Dukungan dari Inesa</h2>
                   </div>
-                  <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-green-100">
+                  <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-4 sm:p-6 lg:p-8 border border-green-100 shadow-xl">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       {[
                         {
@@ -255,7 +257,12 @@ export default function Bontomanai() {
                         },
                         {
                           title: 'Sistem Informasi Penduduk (SIP)',
-                          desc: 'Pendataan warga yang lebih terstruktur dan mudah dikelola untuk layanan administrasi desa.',
+                          desc: (
+                            <>
+                              Pendataan warga yang lebih terstruktur dan mudah dikelola untuk layanan administrasi desa.{' '}
+                            
+                            </>
+                          ),
                           icon: (
                             <svg className="w-6 h-6 sm:w-8 sm:h-8 text-blue-700" fill="currentColor" viewBox="0 0 20 20">
                               <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
@@ -276,7 +283,20 @@ export default function Bontomanai() {
                         },
                         {
                           title: 'Website Profil Desa',
-                          desc: 'Menyediakan informasi tentang kegiatan, anggaran, dan program desa secara terbuka kepada warga melalui website.',
+                          desc: (
+                            <>
+                              Menyediakan informasi tentang kegiatan, anggaran, dan program desa secara terbuka kepada warga melalui website.{' '}
+                              <Link
+                                href="https://bontomana.inesa.id"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 hover:text-blue-800 underline transition-colors duration-200"
+                                aria-label="Kunjungi Website Profil Desa Bontomanai"
+                              >
+                                Kunjungi Website
+                              </Link>
+                            </>
+                          ),
                           icon: (
                             <svg className="w-6 h-6 sm:w-8 sm:h-8 text-orange-700" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M3 3a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2H3zm2 4h10a1 1 0 010 2H5a1 1 0 01-0 2zm0 4h10a1 1 0 010 2H5a1 1 0 010-2z" clipRule="evenodd" />
@@ -298,15 +318,27 @@ export default function Bontomanai() {
                       ].map((feature, index) => (
                         <div
                           key={index}
-                          className={`bg-gradient-to-br ${feature.color} p-4 sm:p-6 rounded-xl border border-white/50 hover:shadow-lg transition-all duration-300 hover:scale-105 ${index === 4 ? 'sm:col-span-2' : ''}`}
+                          className={`relative bg-gradient-to-br ${feature.color} p-4 sm:p-6 rounded-xl border border-white/50 hover:shadow-2xl transition-all duration-300 hover:scale-105 ${index === 4 ? 'sm:col-span-2' : ''}`}
                         >
                           <div className="flex items-start gap-3 sm:gap-4">
                             <div className="text-2xl sm:text-3xl">{feature.icon}</div>
                             <div>
                               <h3 className="font-semibold text-gray-800 mb-2 text-sm sm:text-base lg:text-lg">{feature.title}</h3>
                               <p className="text-gray-600 text-xs sm:text-sm lg:text-base leading-relaxed">{feature.desc}</p>
+                              {feature.title === 'Website Profil Desa' && (
+                                <Link
+                                  href="https://bontomanai.desa.id"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-block mt-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium py-2 px-4 rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                                  aria-label="Kunjungi Website Profil Desa"
+                                >
+                                  Kunjungi Sekarang
+                                </Link>
+                              )}
                             </div>
                           </div>
+                          <div className="absolute top-0 right-0 w-12 h-12 bg-white/20 rounded-bl-3xl"></div>
                         </div>
                       ))}
                     </div>
@@ -421,6 +453,8 @@ export default function Bontomanai() {
                                 <img
                                   src={image.src}
                                   alt={image.alt}
+                                  width={image.width}
+                                  height={image.height}
                                   className="w-full h-full object-contain rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                                   loading="lazy"
                                 />
@@ -519,6 +553,8 @@ export default function Bontomanai() {
                       <img
                         src={galleryImages[selectedImage].src}
                         alt={galleryImages[selectedImage].alt}
+                        width={galleryImages[selectedImage].width}
+                        height={galleryImages[selectedImage].height}
                         className="w-full h-auto max-h-[70vh] object-contain"
                         onTouchStart={handleTouchStart}
                         onTouchEnd={handleTouchEnd}
@@ -600,6 +636,8 @@ export default function Bontomanai() {
                             src={image.src}
                             alt={`Thumbnail ${index + 1}`}
                             className="w-full h-full object-contain"
+                            width={48}
+                            height={32}
                           />
                         </button>
                       ))}
@@ -697,7 +735,9 @@ export default function Bontomanai() {
                           setActiveSection(item.id);
                           const element = document.getElementById(item.id);
                           if (element) {
-                            element.scrollIntoView({ behavior: 'smooth' });
+                            const offset = 80; // Adjust for fixed header
+                            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                            window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
                           }
                         }}
                       >
@@ -717,7 +757,6 @@ export default function Bontomanai() {
                 <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 border border-purple-200 shadow-lg">
                   <h3 className="font-semibold text-gray-800 mb-4">Statistik Artikel</h3>
                   <div className="space-y-3">
-                   
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Kategori</span>
                       <span className="bg-purple-200 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">Digitalisasi</span>

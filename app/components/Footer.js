@@ -108,7 +108,7 @@ export default function Footer() {
               {/* Desktop Social - Horizontal */}
               <div className="hidden sm:flex gap-2 sm:gap-3 md:gap-5 lg:gap-7 xl:gap-9 2xl:gap-11 justify-center md:justify-end">
                  <a 
-                  href="https://www.linkedin.com/company/coconut-computer-club/?originalSubdomain=id" 
+                  href="https://www.linkedin.com/company/coconut-computer-club" 
                   className="text-white text-[0.65rem] sm:text-xs md:text-sm lg:text-base xl:text-lg font-medium hover:text-green-200 transition-colors duration-300"
                 >
                   LinkedIn
